@@ -217,6 +217,7 @@ void mutt_shell_escape(void);
 void mutt_show_error(void);
 void mutt_signal_init(void);
 void mutt_stamp_attachment(struct Body *a);
+void mutt_tag_muted_threads(CONTEXT *, int *);
 void mutt_tag_set_flag(int flag, int bf);
 void mutt_update_encoding(struct Body *a);
 void mutt_version(void);

@@ -1936,6 +1936,14 @@ struct Option MuttVars[] = {
   ** from your spool mailbox to your $$mbox mailbox, or as a result of
   ** a ``$mbox-hook'' command.
   */
+  { "muted",		DT_PATH, R_NONE, UL &Muted, UL "~/muted" },
+  /*
+  ** .pp
+  ** This variable lets users define a mailbox which contains threads
+  ** that are irrelevant to the user. Mails in the current mailbox,
+  ** which reference these threads, can be automatically tagged for
+  ** easy archiving.
+   */
   { "narrow_tree",      DT_BOOL, R_TREE|R_INDEX, UL &NarrowTree, 0 },
   /*
   ** .pp

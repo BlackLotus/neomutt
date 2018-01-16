@@ -189,6 +189,7 @@ const struct Binding OpMain[] = { /* map: index */
   { "buffy-list",                OP_BUFFY_LIST,                     "." },
   { "sync-mailbox",              OP_MAIN_SYNC_FOLDER,               "$" },
   { "display-address",           OP_DISPLAY_ADDRESS,                "@" },
+  { "tag-muted-threads",         OP_TAG_MUTED_THREADS,              "A" },
   { "pipe-message",              OP_PIPE,                           "|" },
   { "next-new",                  OP_MAIN_NEXT_NEW,                  NULL },
   { "next-new-then-unread",      OP_MAIN_NEXT_NEW_THEN_UNREAD,      "\t" },

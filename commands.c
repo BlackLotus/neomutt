@@ -688,6 +688,43 @@ void mutt_display_address(struct Envelope *env)
   mutt_message("%s: %s", pfx, buf);
 }
 
+void mutt_tag_muted_threads(CONTEXT *ctx, int *redraw)
+{
+  THREAD *thread;
+  CONTEXT *reference_ctx;
+  LIST *message_ref;
+  LIST *reference_ref;
+  HEADER *message_header;
+  HEADER *reference_header;
+  int i;
+  int j;
+
+  reference_ctx = mx_open_mailbox (Muted, NULL, NULL);
+  if (reference_ctx == NULL) {
+      return;
+  }
+
+  for (j = 0; j < ctx->msgcount; ++j) {
+    message_header = ctx->hdrs[j];
+
+    for (message_ref = message_header->env->references;
+         message_ref != NULL;
+         message_ref = message_ref->next) {
+
+      for (i = 0; i < reference_ctx->msgcount; ++i) {
+        reference_header = reference_ctx->hdrs[i];
+
+        if (mutt_strcmp(message_ref->data, reference_header->env->message_id) == 0) {
+          mutt_set_flag(ctx, message_header, M_TAG, 1);
+          *redraw |= REDRAW_FULL;
+        }
+      }
+    }
+  }
+
+  FREE (reference_ctx);
+}
+
 static void set_copy_flags(struct Header *hdr, int decode, int decrypt,
                            int *cmflags, int *chflags)
 {

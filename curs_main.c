@@ -2896,6 +2896,11 @@ int mutt_index_menu(void)
         mutt_display_address(CURHDR->env);
         break;
 
+      case OP_TAG_MUTED_THREADS:
+
+	mutt_tag_muted_threads(Context, &menu->redraw);
+	break;
+
       case OP_ENTER_COMMAND:
 
         mutt_enter_command();

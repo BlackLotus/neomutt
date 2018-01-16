@@ -189,6 +189,7 @@ WHERE char *NntpAuthenticators;
 WHERE char *NntpUser;
 WHERE char *NntpPass;
 #endif
+WHERE char *Muted;
 WHERE char *Record;
 WHERE char *Pager;
 WHERE char *PagerFormat;

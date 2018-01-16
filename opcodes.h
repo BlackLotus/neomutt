@@ -213,6 +213,7 @@
   _fmt(OP_SORT_REVERSE,                   N_("sort messages in reverse order")) \
   _fmt(OP_SUBSCRIBE_PATTERN,              N_("subscribe to newsgroups matching a pattern")) \
   _fmt(OP_TAG,                            N_("tag the current entry")) \
+  _fmt(OP_TAG_MUTED,                      N_("tag all mails which belong to muted threads")) \
   _fmt(OP_TAG_PREFIX,                     N_("apply next function to tagged messages")) \
   _fmt(OP_TAG_PREFIX_COND,                N_("apply next function ONLY to tagged messages")) \
   _fmt(OP_TAG_SUBTHREAD,                  N_("tag the current subthread")) \
